@@ -35,7 +35,7 @@ def main(client_secrets_path, scopes):
         client_secrets_path, scopes=scopes)
 
     flow.run_local_server()
-
+    print(flow.__dict__)
     print('Access token: %s' % flow.credentials.token)
     print('Refresh token: %s' % flow.credentials.refresh_token)
 

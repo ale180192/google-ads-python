@@ -35,3 +35,9 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+#credentials
+google-ads.yaml
+
+#others
+myvenv

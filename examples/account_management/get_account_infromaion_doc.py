@@ -13,13 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 """This example lists information about an advertising account.
-
 For example, its name, currency, time zone, etc.
 """
 
 from __future__ import absolute_import
-import pdb
-pdb.set_trace()
 
 import argparse
 import six
@@ -29,15 +26,12 @@ import google.ads.google_ads.client
 
 
 def main(client, customer_id):
-    print('call main')
-    pdb.set_trace()
     customer_service = client.get_service('CustomerService', version='v2')
-    print('ok customer_service', customer_service)
+
     resource_name = customer_service.customer_path(customer_id)
-    print('ok')
+
     try:
         customer = customer_service.get_customer(resource_name=resource_name)
-        print('customer', customer)
     except google.ads.google_ads.errors.GoogleAdsException as ex:
         print('Request with ID "%s" failed with status "%s" and includes the '
               'following errors:' % (ex.request_id, ex.error.code().name))
@@ -60,8 +54,6 @@ if __name__ == '__main__':
     # GoogleAdsClient will read the google-ads.yaml configuration file in the
     # home directory if none is specified.
     path = '/home/ale/google-ads-python/google-ads.yaml'
-    print('ok path', path)
     google_ads_client = (google.ads.google_ads.client.GoogleAdsClient
                          .load_from_storage(path=path))
-    
     main(google_ads_client, '3573039576')

@@ -306,6 +306,7 @@ class CustomerClientServiceClient(object):
             retry=google.api_core.gapic_v1.method.DEFAULT,
             timeout=google.api_core.gapic_v1.method.DEFAULT,
             metadata=None):
+        print('call get cus client')
         """
         Returns the requested client in full detail.
 

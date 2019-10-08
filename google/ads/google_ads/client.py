@@ -195,6 +195,7 @@ class GoogleAdsClient(object):
         self.login_customer_id = login_customer_id
 
     def get_service(self, name, version=_DEFAULT_VERSION, interceptors=[]):
+        print('call get service')
         """Returns a service client instance for the specified service_name.
 
         Args:

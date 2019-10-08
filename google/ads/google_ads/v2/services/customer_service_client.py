@@ -189,7 +189,6 @@ _GAPIC_LIBRARY_VERSION = pkg_resources.get_distribution(
 
 class CustomerServiceClient(object):
     """Service to manage customers."""
-
     SERVICE_ADDRESS = 'googleads.googleapis.com:443'
     """The default address of the service."""
 
@@ -349,6 +348,7 @@ class CustomerServiceClient(object):
             ValueError: If the parameters are invalid.
         """
         # Wrap the transport method to add retry and timeout logic.
+        print('retunrm')
         if 'get_customer' not in self._inner_api_calls:
             self._inner_api_calls['get_customer'] = google.api_core.gapic_v1.method.wrap_method(
                 self.transport.get_customer,
@@ -370,7 +370,6 @@ class CustomerServiceClient(object):
         else:
             routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(routing_header)
             metadata.append(routing_metadata)
-
         return self._inner_api_calls['get_customer'](request, retry=retry, timeout=timeout, metadata=metadata)
 
     def mutate_customer(
