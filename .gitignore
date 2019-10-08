@@ -38,6 +38,7 @@ docs/_build/
 
 #credentials
 google-ads.yaml
+client_secret.json
 
 #others
 myvenv
